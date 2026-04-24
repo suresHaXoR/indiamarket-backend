@@ -57,9 +57,9 @@ app.use((err, req, res, next) => {
 
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
-  console.log(`\n🚀 IndiaMarket API running on port ${PORT}`);
-  console.log(`   Razorpay: ${process.env.RAZORPAY_KEY_ID ? '✅ Connected' : '⚠️  No key set'}`);
-  console.log(`   DB:       ${process.env.DATABASE_URL ? '✅ Connected' : '⚠️  Using in-memory'}\n`);
+ console.log(`🚀 IndiaMarket API running on port ${PORT}`);
+console.log(`   Razorpay: ${process.env.RAZORPAY_KEY_ID ? '✅ Connected' : '⚠️  No key set'}`);
+console.log(`   DB:       ${process.env.SUPABASE_URL ? '✅ Supabase Connected' : '⚠️  Using in-memory'}\n`);
 });
 
 module.exports = app;
