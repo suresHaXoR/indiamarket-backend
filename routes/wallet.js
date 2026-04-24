@@ -1,6 +1,6 @@
 const router  = require('express').Router();
 const { auth } = require('../middleware/auth');
-const db = process.env.SUPABASE_URL 
+const db = process.env.SUPABASE_URL ? require('../db/supabase') : require('../db');
   ? require('../db/supabase') 
   : require('../db');
 

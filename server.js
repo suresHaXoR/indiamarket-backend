@@ -4,6 +4,13 @@ const cors = require('cors');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 
+// Use Supabase if env vars are set
+if (process.env.SUPABASE_URL) {
+  console.log('   DB:       ✅ Supabase Connected');
+} else {
+  console.log('   DB:       ⚠️  Using in-memory');
+}
+
 const walletRoutes  = require('./routes/wallet');
 const paymentRoutes = require('./routes/payment');
 const webhookRoutes = require('./routes/webhook');
